@@ -6,8 +6,6 @@ import cv2
 
 def my_label(image_name):
 
-    # if len(image_name.split(".")) == 3:
-
         name = image_name.split(".")[-3]
 
         if name =="Sue":
@@ -18,17 +16,15 @@ def my_label(image_name):
 
             return np.array([0,1])
   
-    # else:
-    
-    #     return np.array([0,0,1])
+
     
 def my_data():
 
     data = []
 
-    for img in os.listdir("dataset2"):
+    for img in os.listdir("dataset"):
 
-        path = os.path.join("dataset2",img)
+        path = os.path.join("dataset",img)
         img_data = cv2.imread(path)
         img_data = cv2.cvtColor(img_data,cv2.COLOR_BGR2GRAY)
         img_data = cv2.resize(img_data, (50,50))
